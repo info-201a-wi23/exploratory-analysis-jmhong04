@@ -3,6 +3,13 @@ title: "Exploratory Analysis"
 output: html_document
 ---
 
+```{r}
+#make sure you're in the folder where "exploratory-analysis-jmhong0" folder is in
+print(getwd())
+billionaire_data <- read.csv("final_dataframe.csv")
+```
+
+
 ## Project title
 
 Give your project a concise, interesting title that summarizes the entirety of your project
