@@ -10,34 +10,57 @@ billionaire_data <- read.csv("final_dataframe.csv")
 ```
 
 
-## Project title
-
-Give your project a concise, interesting title that summarizes the entirety of your project
+## Do You Have What It Takes to Become a Billionare in 2022?
 
 ### Authors
-
-Names of your team members
+- Ayesha Patel (ayeshap3@uw.edu)
+- Fal Iyoab (fali2003@uw.edu)
+- Gillian Soekawan (gillms4@uw.edu)
+- Jackie Hong (jmhong04@uw.edu)
+- Megan Cuan (mcuan@uw.edu)
 
 ### Date
-
-Winter 2022
+February 20, 2023
 
 ### Abstract
-
-No more than three sentences that summarize your project. Focus on the very most important aspects. For example: (1) "Our main question is .... This question is important because .... To address the question, we will ...." (2) "We are concerned with ..., because .... To address this concern, we plan to ...." (3) "Consider that .... This is important because .... Accordingly, we plan to ...."
+Our project will focus on identifying precursors for achieving a high economic status and assess who is being excluded from the billionaire economic class by investigating the question: “What common qualities or backgrounds do the top billionaires of 2022 share?” This question is important because income and wealth disparities are pressing issues both domestically and internationally. Included in this report will be data visualizations and summary statistics that highlight trends in characteristics describing one’s net worth and economic mobility.
 
 ### Keywords
-
-3-5 keywords that summarize your project.
-(e.g., "Keywords: human physiology; bicycle exercise; Gen Z; times-series data")
+Billionaires; Wealth; Social Class Mobility; Gender Wealth Disparity; Global Distribution of Wealth
 
 ### Introduction  
 
-Briefly introduce your project.  Include 3-5 research questions. What motivates the questions? Why are they important? (at least 200 words)
+Wealth is a vital determinant in the health, success, and security of one’s life. With greater wealth, not only does one have daily access to basic human necessities but also better healthcare benefits and reassurance of a sufficient income leading to longevity and tranquility. Yet, despite the great significance wealth has on the quality of life, there are large inconsistencies in the global [wealth distribution](https://www.cnbc.com/2023/01/16/richest-1percent-amassed-almost-two-thirds-of-new-wealth-created-since-2020-oxfam.html). From all of the wealth created since 2020, the richest 1% in the world own 67% of this new wealth (Kiderlin). Concerned with the unequal distribution of wealth, we wanted to analyze trends in the individuals who have the highest net worth globally in order to understand if this top-tier socioeconomic status is limited to specific characteristics or if it is a status that can be achieved by people from all backgrounds. This leads to our main research question: What precursors do those with the highest net worth in the world have in common with one another?
+
+We broke down our main research question by considering how factors such as gender, age, country of origin (or state when looking only at the U.S.), and inherited wealth play a part in who is able to achieve an immense net worth. We also observed how this relates to one’s dedication to giving back to the less wealthy. Finally, we were curious about these billionaires’ industries in order to understand if a high net worth is correlated to working in a specific industry. All of these inquiries are reflected through the following research questions:
+- Does gender (as a binary variable) play a factor in a billionaire’s net worth?
+- How does privilege/inherited wealth affect one’s ability to achieve high net worth?
+- How does one’s country of origin (international factor) or state (domestic factor) relate to the chances of achieving a net worth in the billions?
+- What are the common trends in billionaires who give back to society?
+- What are the most and least common industries the world’s top billionaires are professionally involved in?
+
+By analyzing Forbes’ data on the World’s Billionaires in 2022, we will be able to analyze these billionaires’ traits and backgrounds and better understand what types of people have access to the world’s wealth.
 
 ### Related Work  
 
-Describe your topic and related work in this space. You must include 3 citations to related work (URLs to similar work, high quality articles from the popular press, research papers, etc. ) Please use a standard citation style of your choice. (at least 200 words)
+Our topic is on 2022’s billionaires around the world and their characteristics and backgrounds. Here are related sources:
+
+> “Billionaires around the World - Statistics &amp; Facts.” Statista, Statista Research Department, 22 Sept. 2022, https://www.statista.com/topics/2229/billionaires-around-the-world/#topicOverview.
+
+- Wealth disparity and distribution can be attributed to many factors, including gender and wealth mobility. This report by Statista is a good primer to preface how wealth is disproportionately spread. It states that almost half of the world’s wealth is owned by the richest 1% of all humans, that a majority of billionaires are older men who are self-made, while the minority of female billionaires are composed of those who inherited their wealth. 
+
+
+> Frank, Robert. “Why Aren’t There More Female Billionaires?” The New York Times, The New York Times, 30 Dec. 2016, https://www.nytimes.com/2016/12/30/business/why-arent-there-more-female-billionaires.html.
+
+- This article offers insight into the gender disparity within wealth distribution in the United States specifically. Gabriel Zucman, an author of a paper on gender analysis of the top 1% of the richest people concluded, “The higher up you move in the income distribution, the lower the proportion of women” (Frank).
+
+> Shiro,, Ariel Gelrud et all. “Stuck on the Ladder: Intragenerational Wealth Mobility in the United States.” Brookings. The Brookings Institution, 29 June 2022, https://www.brookings.edu/wp-content/uploads/2022/06/2022_FMCI_IntragenerationalWealthMobility_FINAL.pdf. 
+
+- This report by Brookings discusses the scope of social mobility in the context of different races, income levels, education levels, and age. Their analysis shows that upward mobility becomes less likely as individuals age while wealth mobility (both upwards and downwards) occur mostly when an individual is in their twenties to thirties. Another factor affecting wealth mobility is an individual’s education level. Among those who are born into the same wealth, bachelor degree holders end up accumulating much more wealth in their fifties as compared to their non-bachelor’s degree holders counterparts. On the other hand, in terms of race, they concluded that white Americans are more upwardly mobile and less downwardly mobile than their Black American counterparts. This report was a great indication that there are many determinants to the accumulation of wealth, including privilege, and uncontrollable factors such as race, age, and the ability to afford a higher education.
+
+> Costa, Nicola. “The Economics of Billionaires.” Michigan Journal of Economics, 17 Nov. 2020, https://sites.lsa.umich.edu/mje/2020/11/17/the-economics-of-billionaires/. 
+
+- This journal describes the negative perceptions of billionaires and the wealth gap, the origin of billionaires from the “founding” of early capitalism, and their role in society today. One of the reasons the public is wary of billionaires is because they are concerned about how these people climbed up to such a high economic status, likely via unethical steps like tax evasion and lobbying. However, it’s important to note that billionaires create corporations that allow Americans to be productive, remain employed, and spend their money at other corporations. This was an important journal for us to read so that we do not approach the dataset with a bias against billionaires because they do have the ability to have a positive impact on the economy as long as they abide by the rules and do not engage in unethical methods to maintain their status.
 
 ### The Dataset
 
