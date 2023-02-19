@@ -13,6 +13,7 @@ data %>% ggplot(aes(x = philanthropyScore, fill=selfMade)) +
   labs(title = "Philanthropy Score vs. Number of Billionaires",
        x = "Philanthropy Score (1-5)",
        y = "Number of Billionaires",
-       fill = "SelfMade") +
+       fill = "Source of Wealth", ) +
+  scale_fill_discrete(labels=c('Not Self-Made', 'Self-Made'), guide = guide_legend(reverse=TRUE)) +
   scale_color_manual(values=c("#ADBDFF", "#3185FC")) 
 
