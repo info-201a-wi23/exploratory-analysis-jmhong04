@@ -103,15 +103,57 @@ Write a summary paragraph of findings that includes the 5 values calculated from
 
 Include a table of aggregate information
 ```{r}
+library(tidyverse)
+library(openintro)
+
 industry_bill_df <- billionaire_data %>% 
-  rename("industry" = "category", "networth" = "finalWorth") %>% 
+  rename("industry" = "category", "networth" = "finalWorth") 
+
+
+fem_total <- industry_bill_df %>% 
+  group_by(industry) %>% 
+  filter(gender == "F", na.rm = TRUE) %>% 
+  summarize(sum_female = n())
+
+gender_total <- industry_bill_df %>% 
+  group_by(industry) %>% 
+  select(gender) %>% 
+  summarize(sum_gender = n())
+
+gender_prop <- left_join(fem_total, gender_total, by = "industry") %>% 
+  mutate(proportion_of_females = sum_female / sum_gender) %>% 
+  select(industry, proportion_of_females)
+
+
+smtrue_total <- industry_bill_df %>% 
+  group_by(industry) %>% 
+  filter(selfMade == "True", na.rm = TRUE) %>% 
+  summarize(sum_true = n())
+
+sm_total <- industry_bill_df %>% 
+  group_by(industry) %>% 
+  select(selfMade) %>% 
+  summarize(sum_selfmade = n())
+
+selfmade_prop <- left_join(smtrue_total, sm_total, by = "industry") %>% 
+  mutate(proportion_of_selfmade = sum_true / sum_selfmade) %>% 
+  select(industry, proportion_of_selfmade)
+
+
+industry_bill_df <- industry_bill_df %>% 
   group_by(industry) %>% 
   summarize(avg_networth = mean(networth, na.rm = TRUE), avg_age = mean(age, na.rm = TRUE)) %>% 
-  select(industry, avg_networth, avg_age) %>% 
-  arrange(-avg_networth) 
+  select(industry, avg_networth, avg_age)
 
-print(industry_bill_df)
+excl_selfmade_df <- left_join(industry_bill_df, gender_prop, by = "industry") 
+aggregate_table <- left_join(excl_selfmade_df, selfmade_prop, by = "industry") %>% 
+  arrange(-avg_networth)
+
+aggregate_table <- aggregate_table %>% 
+  mutate_if(is.numeric,
+            round, digits = 2)
 ```
+
 This table shows the average net worth of billionaire when placed in groups based on the industry they work in. The average net worth is then displayed from greatest to least. Besides the average net worth column is the average age of these billionaires in their respective industry groups. We chose to group our aggregate table by the industry a billionaire works in because we wanted to determine if a certain industry was associated with a higher net worth or if all the net worth averages averaged at a same value for each industry. We also wanted to understand how age related to the most successful industries to see if patterns of age discrimination were present. This table reveals that the Automotive, Fashion & Retail, and Technology are the top three industries with billionaires who have highest average net worth. The average ages across all of the industries in this table are very similar to each other, which suggests that the billionaire economic status might be correlated with an age around 60 years old. 
 
 ### Chart 1
