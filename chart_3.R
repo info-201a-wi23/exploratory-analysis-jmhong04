@@ -8,7 +8,7 @@ library("RColorBrewer")
 library("maps")
 library("stringr")
 
-billionaire_data <- read.csv("~/Desktop/Info-201/Assignments/exploratory-analysis-jmhong04/final_dataframe.csv", stringsAsFactors = FALSE)
+billionaire_data <- read.csv("final_dataframe.csv", stringsAsFactors = FALSE)
 
 billionaire_amt_state <- billionaire_data %>% 
   filter(country == "United States") %>% 
@@ -48,10 +48,12 @@ billionaire_shape_world_data <- world_shape %>%
   left_join(billionaire_amt_country, by = c("updated_countries" = "country"))
 
 
-ggplot(data = billionaire_shape_world_data) +
+world_map <- ggplot(data = billionaire_shape_world_data) +
   geom_polygon(aes(x = long, 
                    y = lat, 
                    group = group,
                    fill = country_number)) +
   coord_map() +
   labs(title = 'Billionaires Around the World', fill = 'Number of Billionaires')
+
+world_map + coord_map(xlim=c(-180,180))
