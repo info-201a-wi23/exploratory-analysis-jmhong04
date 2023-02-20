@@ -1,5 +1,5 @@
 # load library
-library("ggplot")
+library("ggplot2")
 library("plotly")
 library("dplyr")
 
