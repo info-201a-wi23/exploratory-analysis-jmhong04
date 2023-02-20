@@ -6,6 +6,7 @@ output: html_document
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
 #make sure you're in the folder where "exploratory-analysis-jmhong0" folder is in
 billionaire_data <- read.csv("final_dataframe.csv")
+source("aggregate_table.R")
 ```
 
 
@@ -108,9 +109,8 @@ Write a summary paragraph of findings that includes the 5 values calculated from
 
 ### Table
 
-Include a table of aggregate information
-``````{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("aggregate_table.R")}
-knitr::kable(aggregate_table, caption = "Billionaire Data by Industry")
+``````{r, echo = FALSE, warning = FALSE, message = FALSE}
+knitr::kable(aggregate_table, col.names = c("Industry", "Average Net Worth", "Average Age", "Proportion of Women", "Proportion of Men"), caption = "Billionaire Data by Industry")
 ```
 
 This table groups 2022’s billionaires by the industry they work in. Furthermore, it shows the average net worth and age of the billionaires as well as the proportion of women and proportion of self-made billionaires **per industry**. The average net worth is then displayed from greatest to least in order to show, on average, which industries contain the billionaires with the highest net worth. We chose to group our aggregate table by industry because we wanted to determine if a certain industry was associated with a higher net worth or if a billionaire’s net worth was the same regardless of the industry. We also wanted to understand how some of the factors we addressed in our research questions (such as age, gender, and privilege) played out in the industries with the most successful billionaires instead of only viewing how these factors play out among all billionaires. This table reveals that the Automotive, Fashion & Retail, and Technology industries are the top three industries with billionaires who have the highest average net worth. The table reveals that the average ages across all of the industries are very similar to each other, which suggests that the billionaire's economic status might be correlated with an age around 60 years of age regardless of industry. The proportion of women in each industry is extremely low and never exceeds 0.2 revealing a low proportion of women billionaires across all industries. The proportion of billionaires who are self-made is highest in the Technology industry at 0.94 and lowest in the Diversified industry at 0.46 suggesting that there is more economic mobility in the technology industry.
