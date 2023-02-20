@@ -3,9 +3,8 @@ title: "Exploratory Analysis"
 output: html_document
 ---
 
-```{r}
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
 #make sure you're in the folder where "exploratory-analysis-jmhong0" folder is in
-print(getwd())
 billionaire_data <- read.csv("final_dataframe.csv")
 ```
 
@@ -110,7 +109,7 @@ Write a summary paragraph of findings that includes the 5 values calculated from
 ### Table
 
 Include a table of aggregate information
-```{r, echo = FALSE}
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
 library(tidyverse)
 library(openintro)
 
@@ -167,41 +166,14 @@ aggregate_table <- left_join(excl_selfmade_df, selfmade_prop, by = "industry") %
 aggregate_table <- aggregate_table %>% 
   mutate_if(is.numeric,
             round, digits = 2)
+knitr::kable(aggregate_table, caption = "Billionaire Data by Industry")
 ```
 
 This table groups 2022’s billionaires by the industry they work in. Furthermore, it shows the average net worth and age of the billionaires as well as the proportion of women and proportion of self-made billionaires **per industry**. The average net worth is then displayed from greatest to least in order to show, on average, which industries contain the billionaires with the highest net worth. We chose to group our aggregate table by industry because we wanted to determine if a certain industry was associated with a higher net worth or if a billionaire’s net worth was the same regardless of the industry. We also wanted to understand how some of the factors we addressed in our research questions (such as age, gender, and privilege) played out in the industries with the most successful billionaires instead of only viewing how these factors play out among all billionaires. This table reveals that the Automotive, Fashion & Retail, and Technology industries are the top three industries with billionaires who have the highest average net worth. The table reveals that the average ages across all of the industries are very similar to each other, which suggests that the billionaire's economic status might be correlated with an age around 60 years of age regardless of industry. The proportion of women in each industry is extremely low and never exceeds 0.2 revealing a low proportion of women billionaires across all industries. The proportion of billionaires who are self-made is highest in the Technology industry at 0.94 and lowest in the Diversified industry at 0.46 suggesting that there is more economic mobility in the technology industry.
 
 ### Chart 1
 
-Include a chart
-
-Describe why you chose this chart and what information it reveals
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, warning = FALSE, message = FALSE}
-# load library
-library("ggplot2")
-library("plotly")
-library("dplyr")
-
-all_data <- read.csv("final_dataframe.csv", stringsAsFactors = FALSE)
-
-chart_world_data <- all_data %>%
-  select(age, finalWorth, gender) %>%
-  filter(gender == 'F' | gender == 'M')
-
-chart_world_data <- chart_world_data %>%
-  
-na.omit(chart_world_data)
-
-ggplot(data = chart_world_data) +
-  geom_line(mapping = aes(x = age, y = finalWorth, color = gender)) +
-  geom_point(mapping = aes(x = age, y = finalWorth, color = gender)) +
-  scale_x_continuous(breaks = seq(20, 100, 5)) + 
-  scale_y_continuous(breaks = seq(0, 220, 25)) + 
-  labs(title = "Distribution of Age vs Net Worth by Gender", x = "Age", y = "Net Worth (in billions)", color = "Gender") +
-  scale_color_hue(labels = c('Women', 'Men'))
+``````{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart_1.R")}
 ```
 
 The purpose of this combined scatterplot and line plot is to show the net worth for women and men across different ages. It highlights whether age is in fact, correlated with net worth and whether this trend differs between men and women. It seeks to answer our questions about the extent to which age and gender have an effect on one's ability to acquire wealth. The scatter plot aspect of the visualization emphasizes outliers and shows the general trend while the line plot aspect of the visualization increases readability.
