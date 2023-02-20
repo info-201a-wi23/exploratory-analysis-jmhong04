@@ -37,6 +37,8 @@ ggplot(data = billionaire_shape_state_data) +
                    group = group,
                    fill = state_number)) +
   coord_map() +
+  scale_fill_gradient(low="#A2A2D0", 
+                      high="#132B43") +
   labs(title = 'Billionaires in the US', fill = 'Number of Billionaires', x = 'Longitude', y = 'Latitude')
 
 #World Map
@@ -54,6 +56,8 @@ world_map <- ggplot(data = billionaire_shape_world_data) +
                    group = group,
                    fill = country_number)) +
   coord_map() +
+  scale_fill_gradient(low="#A2A2D0", 
+                      high="#132B43") +
   labs(title = 'Billionaires Around the World', fill = 'Number of Billionaires', x = 'Longitude', y = 'Latitude')
 
 world_map + coord_map(xlim=c(-180,180))
