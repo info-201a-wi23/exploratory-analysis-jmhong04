@@ -179,8 +179,34 @@ Describe why you chose this chart and what information it reveals
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+``````{r, echo = FALSE, warning = FALSE, message = FALSE}
+# load library
+library("ggplot2")
+library("plotly")
+library("dplyr")
+
+all_data <- read.csv("final_dataframe.csv", stringsAsFactors = FALSE)
+
+chart_world_data <- all_data %>%
+  select(age, finalWorth, gender) %>%
+  filter(gender == 'F' | gender == 'M')
+
+chart_world_data <- chart_world_data %>%
+  
+na.omit(chart_world_data)
+
+ggplot(data = chart_world_data) +
+  geom_line(mapping = aes(x = age, y = finalWorth, color = gender)) +
+  geom_point(mapping = aes(x = age, y = finalWorth, color = gender)) +
+  scale_x_continuous(breaks = seq(20, 100, 5)) + 
+  scale_y_continuous(breaks = seq(0, 220, 25)) + 
+  labs(title = "Distribution of Age vs Net Worth by Gender", x = "Age", y = "Net Worth (in billions)", color = "Gender") +
+  scale_color_hue(labels = c('Women', 'Men'))
 ```
+
+The purpose of this combined scatterplot and line plot is to show the net worth for women and men across different ages. It highlights whether age is in fact, correlated with net worth and whether this trend differs between men and women. It seeks to answer our questions about the extent to which age and gender have an effect on one's ability to acquire wealth. The scatter plot aspect of the visualization emphasizes outliers and shows the general trend while the line plot aspect of the visualization increases readability.
+
+This visualization shows that billionaires aged 55 to 75, on average, seem to have higher net worths. There is, however, an outlier at age 50 with the highest net worth at upwards of 200 billion. Excluding the outlier, the male with the highest net worth is around 57 years old while the billionaire that is a woman with the highest net worth is around age 67. It seems that billionaires that are women, as a whole, have lower net worths than billionaires that are men. The wealthier women billionaires are generally older than the wealthier men billionaires suggesting that billionaires who are women acquire wealth when they’re older. Overall, it appears that older men hold the majority of the world's wealth. 
 
 ### Chart 2
 
@@ -190,7 +216,7 @@ Describe why you chose this chart and what information it reveals
 
 ### Chart 3
 
-``````{r, echo = FALSE}
+``````{r, echo = FALSE, warning = FALSE, message = FALSE}
 library("ggplot2")
 library("plotly")
 library("dplyr")
