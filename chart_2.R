@@ -9,7 +9,7 @@ data <- na.omit(read.csv("final_dataframe.csv"))
 
 # Creating plot
 data %>% ggplot(aes(x = philanthropyScore, fill=selfMade)) +
-  geom_bar(position="stack") + 
+  geom_histogram(position="stack") + 
   labs(title = "Philanthropy Score vs. Number of Billionaires",
        x = "Philanthropy Score (1-5)",
        y = "Number of Billionaires",
