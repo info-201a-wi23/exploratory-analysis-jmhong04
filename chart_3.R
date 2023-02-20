@@ -32,8 +32,8 @@ billionaire_shape_state_data <- state_shape %>%
   left_join(billionaire_amt_state, by = c("updated_regions" = "state"))
 
 ggplot(data = billionaire_shape_state_data) +
-  geom_polygon(aes(x = long, 
-                   y = lat, 
+  geom_polygon(aes(x = Longitude, 
+                   y = Latitude, 
                    group = group,
                    fill = state_number)) +
   coord_map() +
@@ -49,8 +49,8 @@ billionaire_shape_world_data <- world_shape %>%
 
 
 world_map <- ggplot(data = billionaire_shape_world_data) +
-  geom_polygon(aes(x = long, 
-                   y = lat, 
+  geom_polygon(aes(x = Longitude, 
+                   y = Latitude, 
                    group = group,
                    fill = country_number)) +
   coord_map() +
