@@ -23,21 +23,21 @@ billionaire_data <- read.csv("final_dataframe.csv")
 February 20, 2023
 
 ### Abstract
-Our project will focus on identifying precursors for achieving a high economic status and assess who is being excluded from the billionaire economic class by investigating the question: “What common qualities or backgrounds do the top billionaires of 2022 share?” This question is important because income and wealth disparities are pressing issues both domestically and internationally. Included in this report will be data visualizations and summary statistics that highlight trends in characteristics describing one’s net worth and economic mobility.
+Our project will focus on identifying precursors for achieving a high economic status and assess who is being excluded from the billionaire economic class by investigating the question: “What common qualities or backgrounds do the top billionaires of 2022 share?” This question is important because income and wealth disparities are pressing issues both domestically and internationally. Included in this report will be data visualizations and summary statistics that highlight trends in characteristics describing one’s net worth.
 
 ### Keywords
 Billionaires; Wealth; Social Class Mobility; Gender Wealth Disparity; Global Distribution of Wealth
 
 ### Introduction  
 
-Wealth is a vital determinant in the health, success, and security of one’s life. With greater wealth, not only does one have daily access to basic human necessities but also better healthcare benefits and reassurance of a sufficient income leading to longevity and tranquility. Yet, despite the great significance wealth has on the quality of life, there are large inconsistencies in the global [wealth distribution](https://www.cnbc.com/2023/01/16/richest-1percent-amassed-almost-two-thirds-of-new-wealth-created-since-2020-oxfam.html). From all of the wealth created since 2020, the richest 1% in the world own 67% of this new wealth (Kiderlin). Concerned with the unequal distribution of wealth, we wanted to analyze trends in the individuals who have the highest net worth globally in order to understand if this top-tier socioeconomic status is limited to specific characteristics or if it is a status that can be achieved by people from all backgrounds. This leads to our main research question: What precursors do those with the highest net worth in the world have in common with one another?
+Wealth is a vital determinant in the health, success, and security of one’s life. With greater wealth, not only does one have daily access to basic human necessities but also better healthcare benefits and reassurance of a sufficient income leading to longevity and tranquility. Yet, despite the great significance wealth has on the quality of life, there are large inconsistencies in the global [wealth distribution](https://www.cnbc.com/2023/01/16/richest-1percent-amassed-almost-two-thirds-of-new-wealth-created-since-2020-oxfam.html). From all of the wealth created since 2020, the richest 1% in the world own 67% of this new wealth (Kiderlin). Concerned with the unequal distribution of wealth, we wanted to analyze trends in the individuals who have the highest net worth globally in order to understand if this top-tier socioeconomic status is limited to specific characteristics or if it is a status that can be achieved by people from all backgrounds. This leads to our main research question: *What precursors do those with the highest net worth in the world have in common with one another?*
 
 We broke down our main research question by considering how factors such as gender, age, country of origin (or state when looking only at the U.S.), and inherited wealth play a part in who is able to achieve an immense net worth. We also observed how this relates to one’s dedication to giving back to the less wealthy. Finally, we were curious about these billionaires’ industries in order to understand if a high net worth is correlated to working in a specific industry. All of these inquiries are reflected through the following research questions:
-- Does gender (as a binary variable) play a factor in a billionaire’s net worth?
-- How does privilege/inherited wealth affect one’s ability to achieve high net worth?
-- How does one’s country of origin (international factor) or state (domestic factor) relate to the chances of achieving a net worth in the billions?
-- What are the common trends in billionaires who give back to society?
-- What are the most and least common industries the world’s top billionaires are professionally involved in?
+- *Does gender (as a binary variable) play a factor in a billionaire’s net worth?*
+- *How does privilege/inherited wealth affect one’s ability to achieve high net worth?*
+- *How does one’s country of origin (international factor) or state (domestic factor) relate to the chances of achieving a net worth in the billions?*
+- *What are the common trends in billionaires who give back to society?*
+- *What are the most and least common industries the world’s top billionaires are professionally involved in?*
 
 By analyzing Forbes’ data on the World’s Billionaires in 2022, we will be able to analyze these billionaires’ traits and backgrounds and better understand what types of people have access to the world’s wealth.
 
@@ -47,8 +47,7 @@ Our topic is on 2022’s billionaires around the world and their characteristics
 
 > “Billionaires around the World - Statistics &amp; Facts.” Statista, Statista Research Department, 22 Sept. 2022, https://www.statista.com/topics/2229/billionaires-around-the-world/#topicOverview.
 
-- Wealth disparity and distribution can be attributed to many factors, including gender and wealth mobility. This report by Statista is a good primer to preface how wealth is disproportionately spread. It states that almost half of the world’s wealth is owned by the richest 1% of all humans, that a majority of billionaires are older men who are self-made, while the minority of female billionaires are composed of those who inherited their wealth. 
-
+- Wealth disparity and distribution can be attributed to many factors, including gender and wealth mobility. This report by Statista is a good primer to preface how wealth is disproportionately spread. It states that almost half of the world’s wealth is owned by the richest 1% of all humans, that a majority of billionaires are older men who are self-made, while the minority of billionaires who are women are composed of those who inherited their wealth.
 
 > Frank, Robert. “Why Aren’t There More Female Billionaires?” The New York Times, The New York Times, 30 Dec. 2016, https://www.nytimes.com/2016/12/30/business/why-arent-there-more-female-billionaires.html.
 
@@ -64,29 +63,38 @@ Our topic is on 2022’s billionaires around the world and their characteristics
 
 ### The Dataset
 
-> Where did you find the data? Please include a link to the data source  
+> Where did you find the data? Please include a link to the data source
+
 - The dataset in a csv format was obtained from Kaggle at the following website: https://www.kaggle.com/datasets/prasertk/forbes-worlds-billionaires-list-2022?resource=download . The original source of the data is Forbes:  https://www.forbes.com/billionaires/
 
 > Who collected the data?  
+
 - Forbes. The main editor is Kerry A. Dolan and others include Bruce Upbin, Russell Flannery, Naazneen Karmali, Zina Moukheiber, Tatiana Serafin, and Susan Adams. The entire team is composed of more than 50 individuals that work together to collect and aggregate the data.
 
 > How was the data collected or generated?  
-- According to an [article](https://www.forbes.com/sites/kerryadolan/2012/03/07/methodology-how-we-crunch-the-numbers/?sh=2f5e606cd3d8), Forbes generated the list using stock prices and exchange rates from March 11, 2022 (Dolan). Surveys were sent out to those who qualified for the list, with some who chose not to answer. To determine the net worth, they used intel gathered by dozens of reporters to estimate the value of individuals’ assets. To determine the philanthropic score, Forbes added the value of each individual’s total donations to the net worth, and divided their lifetime giving by that number. Each score corresponds to a number in a range, with 5 being most charitable and 1 being the least charitable. It should be mentioned this information was obtained from a source over 10 years old, however, Forbes has iterated they are constantly trying to improve their methodology in a [recent article](https://www.forbes.com/sites/chasewithorn/2022/09/27/2022-forbes-400-methodology-how-we-crunch-the-numbers/?sh=51080ec5d0eb) published about gathering data on American billionaires (Withorn).  
+
+- According to an [article](https://www.forbes.com/sites/kerryadolan/2012/03/07/methodology-how-we-crunch-the-numbers/?sh=2f5e606cd3d8), Forbes generated the list using stock prices and exchange rates from March 11, 2022 (Dolan). Surveys were sent out to those who qualified for the list, with some who chose not to answer. To determine the net worth, they used intel gathered by dozens of reporters to estimate the value of individuals’ assets. To determine the philanthropic score, Forbes added the value of each individual’s total donations to the net worth, and divided their lifetime giving by that number. Each score corresponds to a number in a range, with 5 being most charitable and 1 being the least charitable. It should be mentioned this information was obtained from a source over 10 years old, however, Forbes has iterated they are constantly trying to improve their methodology in a [recent article](https://www.forbes.com/sites/chasewithorn/2022/09/27/2022-forbes-400-methodology-how-we-crunch-the-numbers/?sh=51080ec5d0eb) published about gathering data on American billionaires (Withorn). 
 
 > Why was the data collected?  
+
 - Forbes has been collecting this data yearly since 1987 to provide a snapshot of the world’s billionaires to the general public. Forbes’s role as a business magazine may contribute to its interest in measuring the world’s wealthiest individuals. 
 
 >How many observations (rows) are in your data?  
+
 - There are 2668 observations in the dataset.
 
 > How many features (columns) are in the data?  
+
 - In the original dataset, there are 22 columns. We plan to use the following 13 columns: rank, person name, age, final worth, category, source, country, state, city, country of citizenship, self made, gender, and philanthropy score.
 
 > What, if any, ethical questions or questions of power do you need to consider when working with this data?  
-- Gender is represented as a binary in the data, showing only whether an individual is a female or male.
+
+- Gender is missrepresented as female and male in this dataset. Forbes should have replaced female with women and male with men to accurately represent gender. Throughout this report, we will denote the ‘F’ and ‘M’ symbol in the data under gender as women and men respectively. The data also treats gender as a binary variable limiting the gender analysis to women and men. 
+
 - A person is listed as a billionaire only if they were the founder of their wealth. This means multigenerational families and those born into tremendous wealth are not included in the survey. This refers to privilege and how those who are born into wealthy circumstances may not be represented in this dataset.
 
 > What are possible limitations or problems with this data?   (at least 200 words)
+
 - After evaluating the dataset, one possible problem might arise due to the inclusion of both international and domestic data. This could cause difficulty in interpreting the results as a combined population because of the known differences between domestic versus international trends. It ultimately led us to our question “How does one’s country of origin (international factor) or state (domestic factor) relate to the chances of achieving a net worth in the billions?” through which we first examine trends in individual countries to identify and reduce the impact of cultural differences. Another possible limitation is the considerable number of “NA” values in the philanthropy score column. The lack of data limits our sample size for identifying trends among those who are charitable. Furthermore, it seems there are more “NA” values for billionaires who are not from the United States, suggesting the dataset is favoring United States billionaires over international ones. Limited data about those from countries other than the United States would cause our conclusions therefore to also favor US billionaires. Another possible limitation is the “self-made” category being represented as binary which may be an oversimplification. It is difficult to ascertain the level of power and influence the individual’s family may have had, leading to limited nuance and applicability of the results. Lastly, there are a few factors that are more informative in elucidating the realities of social mobility such as educational attainment, race, and the family’s relative economic class that Forbes chose not to investigate. If these factors were included in our dataset, the conclusions we would be able to draw about whether social mobility is attainable for the average person may be more specific and detailed.
 
 ### Implications
@@ -102,59 +110,66 @@ Write a summary paragraph of findings that includes the 5 values calculated from
 ### Table
 
 Include a table of aggregate information
-```{r}
+```{r, echo = FALSE}
 library(tidyverse)
 library(openintro)
 
+#load data into new dataframe with renamed columns
 industry_bill_df <- billionaire_data %>% 
   rename("industry" = "category", "networth" = "finalWorth") 
 
-
-fem_total <- industry_bill_df %>% 
+#create new dataframe of the number of women billionaires per industry
+wom_total <- industry_bill_df %>% 
   group_by(industry) %>% 
   filter(gender == "F", na.rm = TRUE) %>% 
-  summarize(sum_female = n())
+  summarize(sum_women = n())
 
+#create new dataframe of the total number of billionaires per industry in the gender column
 gender_total <- industry_bill_df %>% 
   group_by(industry) %>% 
   select(gender) %>% 
   summarize(sum_gender = n())
 
-gender_prop <- left_join(fem_total, gender_total, by = "industry") %>% 
-  mutate(proportion_of_females = sum_female / sum_gender) %>% 
-  select(industry, proportion_of_females)
+#create new dataframe of the proportion of female billionaires per industry
+women_prop <- left_join(wom_total, gender_total, by = "industry") %>% 
+  mutate(proportion_of_women = sum_women / sum_gender) %>% 
+  select(industry, proportion_of_women)
 
-
+#create new dataframe of the number of self-made billionaires per industry
 smtrue_total <- industry_bill_df %>% 
   group_by(industry) %>% 
   filter(selfMade == "True", na.rm = TRUE) %>% 
   summarize(sum_true = n())
 
+#create new dataframe of the total number of billionaires per industry in the self-made column
 sm_total <- industry_bill_df %>% 
   group_by(industry) %>% 
   select(selfMade) %>% 
   summarize(sum_selfmade = n())
 
+#create new dataframe of the proportion of self-made billionaires per industry
 selfmade_prop <- left_join(smtrue_total, sm_total, by = "industry") %>% 
   mutate(proportion_of_selfmade = sum_true / sum_selfmade) %>% 
   select(industry, proportion_of_selfmade)
 
-
+#edit industry_bill_df to only have columns of industry, average mean, and average networth
 industry_bill_df <- industry_bill_df %>% 
   group_by(industry) %>% 
   summarize(avg_networth = mean(networth, na.rm = TRUE), avg_age = mean(age, na.rm = TRUE)) %>% 
   select(industry, avg_networth, avg_age)
 
-excl_selfmade_df <- left_join(industry_bill_df, gender_prop, by = "industry") 
+#join all dataframes to create a dataframe of industry, average networth, average age, proportion of females, and proportion of self-made billionaires
+excl_selfmade_df <- left_join(industry_bill_df, women_prop, by = "industry") 
 aggregate_table <- left_join(excl_selfmade_df, selfmade_prop, by = "industry") %>% 
   arrange(-avg_networth)
 
+#round all dataframe values
 aggregate_table <- aggregate_table %>% 
   mutate_if(is.numeric,
             round, digits = 2)
 ```
 
-This table shows the average net worth of billionaire when placed in groups based on the industry they work in. The average net worth is then displayed from greatest to least. Besides the average net worth column is the average age of these billionaires in their respective industry groups. We chose to group our aggregate table by the industry a billionaire works in because we wanted to determine if a certain industry was associated with a higher net worth or if all the net worth averages averaged at a same value for each industry. We also wanted to understand how age related to the most successful industries to see if patterns of age discrimination were present. This table reveals that the Automotive, Fashion & Retail, and Technology are the top three industries with billionaires who have highest average net worth. The average ages across all of the industries in this table are very similar to each other, which suggests that the billionaire economic status might be correlated with an age around 60 years old. 
+This table groups 2022’s billionaires by the industry they work in. Furthermore, it shows the average net worth and age of the billionaires as well as the proportion of women and proportion of self-made billionaires **per industry**. The average net worth is then displayed from greatest to least in order to show, on average, which industries contain the billionaires with the highest net worth. We chose to group our aggregate table by industry because we wanted to determine if a certain industry was associated with a higher net worth or if a billionaire’s net worth was the same regardless of the industry. We also wanted to understand how some of the factors we addressed in our research questions (such as age, gender, and privilege) played out in the industries with the most successful billionaires instead of only viewing how these factors play out among all billionaires. This table reveals that the Automotive, Fashion & Retail, and Technology industries are the top three industries with billionaires who have the highest average net worth. The table reveals that the average ages across all of the industries are very similar to each other, which suggests that the billionaire's economic status might be correlated with an age around 60 years of age regardless of industry. The proportion of women in each industry is extremely low and never exceeds 0.2 revealing a low proportion of women billionaires across all industries. The proportion of billionaires who are self-made is highest in the Technology industry at 0.94 and lowest in the Diversified industry at 0.46 suggesting that there is more economic mobility in the technology industry.
 
 ### Chart 1
 
