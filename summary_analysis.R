@@ -5,8 +5,6 @@ library("stringr")
 
 # AGE: WHAT IS THE MEDIAN AND MEAN AGE?
 average_age <- billionaires_data %>% 
-  summarize(mean_age = mean(age, na.rm = TRUE))
-median_age <- billionaires_data %>% 
   summarize(median_age = median(age, na.rm = TRUE))
 
 # GENDER
@@ -51,8 +49,7 @@ avg_philantrophy <- billionaires_data %>%
 
 #Summary Statistics
 summary_info <- list()
-summary_info$meanAge <- average_age
-summary_info$median_Age <- median_age_bill
+summary_info$averageAge <- average_age
 summary_info$proportion_of_women <- percentage_of_women
 summary_info$proportion_of_men <- percentage_of_men
 summary_info$proportion_inherited <- prop_privilege
@@ -60,4 +57,3 @@ summary_info$proportion_selfmade <- prop_selfMade
 summary_info$most_country <- highest_num_billionaires_country
 summary_info$most_state <- highest_num_billionaires_state
 summary_info$mean_philantrophy <- avg_philantrophy_score
-summary_info$total_amt <- total_amt_billionaires
