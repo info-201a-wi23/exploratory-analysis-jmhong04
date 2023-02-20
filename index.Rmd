@@ -139,7 +139,9 @@ We wanted to figure out if an individual’s background (their level of privileg
 ``````{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart_3.R")}
 
 ```
-These density maps are color-coded to represent the density of a particular variable across a given area. In the case of a density map of billionaires, the map uses color gradients to show where the highest concentrations of billionaires are located.                        			
+
+These density maps are color-coded to represent the density of a particular variable across a given area. In the case of a density map of billionaires, the map uses color gradients to show where the highest concentrations of billionaires are located.  
+
 The world density map of billionaires shows the distribution of billionaires across different regions and countries. This map is helpful in highlighting the countries with the highest number of billionaires, such as the United States and China. 	
 
 Zooming in on the United States specifically, this density map shows the distribution of billionaires across the country's various states (and excludes Hawaii, Alaska, and U.S. territories). This map is useful in highlighting the areas with the highest concentration of billionaires, such as California and New York. It also shows the areas with the lowest concentration of billionaires, such as rural states in the Midwest and South.
