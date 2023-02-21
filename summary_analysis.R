@@ -18,6 +18,7 @@ perc_of_men <- num_of_men/total_num_billionaires
 
 
 # PRIVILEGE
+Privilege <- billionaire_data$selfMade
 amt_inherited <- length(privilege[privilege == "False"])
 amt_selfMade <- length(privilege[privilege == "True"])
 
@@ -52,7 +53,7 @@ summary_info <- list()
 summary_info$averageAge <- average_age
 summary_info$proportion_of_women <- percentage_of_women
 summary_info$proportion_of_men <- percentage_of_men
-summary_info$proportion_inherited <- prop_privilege
+summary_info$proportion_inherited <- proportion_inherited
 summary_info$proportion_selfmade <- prop_selfMade
 summary_info$most_country <- highest_num_billionaires_country
 summary_info$most_state <- highest_num_billionaires_state
