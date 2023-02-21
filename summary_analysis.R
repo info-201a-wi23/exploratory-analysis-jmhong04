@@ -8,7 +8,7 @@ average_age <- billionaire_data %>%
   summarize(median_age = median(age, na.rm = TRUE))
 
 # GENDER
-total_num_billionaires <- nrow(billionaires_data)
+total_num_billionaires <- nrow(billionaire_data)
 
 gender_variable <- billionaire_data$gender
 num_of_men <- length(gender_variable[gender_variable == 'M'])
