@@ -48,7 +48,7 @@ industry_bill_df <- industry_bill_df %>%
   summarize(avg_networth = mean(networth, na.rm = TRUE), avg_age = mean(age, na.rm = TRUE)) %>% 
   select(industry, avg_networth, avg_age)
 
-#join all dataframes to create a dataframe of industry, average networth, average age, proportion of females, and proportion of self-made billionaires
+#join all dataframes to create a dataframe of industry, average networth, average age, proportion of women, and proportion of self-made billionaires
 excl_selfmade_df <- left_join(industry_bill_df, women_prop, by = "industry") 
 aggregate_table <- left_join(excl_selfmade_df, selfmade_prop, by = "industry") %>% 
   arrange(-avg_networth)
