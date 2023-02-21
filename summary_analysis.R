@@ -55,6 +55,6 @@ summary_info$proportion_of_women <- perc_of_women
 summary_info$proportion_of_men <- perc_of_men
 summary_info$proportion_inherited <- proportion_inherited
 summary_info$proportion_selfmade <- proportion_selfMade
-summary_info$most_country <- highest_num_billionaires_country
-summary_info$most_state <- highest_num_billionaires_state
+summary_info$most_country <- highest_num_country
+summary_info$most_state <- highest_num_state
 summary_info$mean_philantrophy <- avg_philantrophy_score
