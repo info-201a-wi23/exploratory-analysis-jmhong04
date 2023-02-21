@@ -19,8 +19,8 @@ perc_of_men <- num_of_men/total_num_billionaires
 
 # PRIVILEGE
 Privilege <- billionaire_data$selfMade
-amt_inherited <- length(privilege[privilege == "False"])
-amt_selfMade <- length(privilege[privilege == "True"])
+amt_inherited <- length(Privilege[Privilege == "False"])
+amt_selfMade <- length(Privilege[Privilege == "True"])
 
 proportion_inherited <- amt_inherited/total_num_billionaires
 proportion_selfMade <- amt_selfMade/total_num_billionaires
