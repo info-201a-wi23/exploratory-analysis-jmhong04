@@ -4,13 +4,13 @@ library("tidyverse")
 library("stringr")
 
 # AGE: WHAT IS THE MEDIAN AND MEAN AGE?
-average_age <- billionaires_data %>% 
+average_age <- billionaire_data %>% 
   summarize(median_age = median(age, na.rm = TRUE))
 
 # GENDER
 total_num_billionaires <- nrow(billionaires_data)
 
-gender_variable <- billionaires_data$gender
+gender_variable <- billionaire_data$gender
 num_of_men <- length(gender_variable[gender_variable == 'M'])
 num_of_women <- length(gender_variable[gender_variable == "F"])
 perc_of_women <- num_of_women/total_num_billionaires
@@ -43,7 +43,7 @@ highest_num_state <- state_amt_billionaires %>%
   pull(state)
 
 #PHILANTROPHY
-avg_philantrophy <- billionaires_data %>% 
+avg_philantrophy <- billionaire_data %>% 
   filter(country == "United States") %>% 
   summarize(average_philantrophy_score = mean(philanthropyScore, na.rm = TRUE))
 
