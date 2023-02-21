@@ -4,7 +4,6 @@ output: html_document
 ---
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
-#make sure you're in the folder where "exploratory-analysis-jmhong0" folder is in
 billionaire_data <- read.csv("final_dataframe.csv")
 source("aggregate_table.R")
 ```
@@ -104,8 +103,11 @@ Through our research, we hope to provide answers about the common social factors
 One of the main challenges with examining data about billionaires is determining the self-made status because of the subjective nature of the concept. For example, those who are born into a wealthy family but worked hard to build their own successful career might consider themselves self-made, such as the Kardashians, while others might argue that their upbringing gave them an unfair advantage. There are certain individuals who are excluded from billionaires’ lists, such as those who have acquired wealth through political power or hereditary privilege. For example, corrupt political leaders like Kim Jong Un or members of royal families may have access to vast resources and opportunities that are not available to the general population. Additionally, individuals who have acquired wealth through unethical or illegal means, such as embezzlement, exploitation of natural resources, or human rights abuses are also typically excluded from such lists. Billionaire data often doesn't incorporate intangible, metaphysical elements in what brought a person to become a billionaire. We do not know how hard a person worked, the intensity of their desire to accumulate wealth, and other potential psychological factors that would greatly affect one's ability to achieve economic success. This is because of the difficulty in quantifying and ensuring the data remain consistent. Because we don’t have access to all of this information, it is difficult to reach conclusions that apply to the whole population.
 
 ### Summary Information
+```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("summary_analysis.R")}
+```
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+The Forbes Top World Billionaires List of 2022 includes 2668 billionaires from around the world. When calculating the average age among the billionaires, it was `r average_age`. From this data, we are also able to calculate the breakdown of gender, privilege, location, and philanthropy scores to see who is in the majority. After calculating the gender make-up of the 2022 billionaire list, the proportion of men is greater than the proportion of women. The proportion of women was `r perc_of_women` while the proportion of men was `r perc_of_men`, nearly eight times higher than the proportion of women. Interestingly, when calculating the proportions of privilege, the proportion of billionaires with inherited wealth, `r proportion_inherited` ,is significantly lower than the proportion of self-made billionaires, `r proportion_selfMade`. The country with the highest number of billionaires was `r highest_num_country`. And, the state within the U.S. with the highest number of billionaires was `r highest_num_state`. The average philanthropy score among billionaires in the United States was `r avg_philantrophy` out of 5.
+
 
 ### Table
 
