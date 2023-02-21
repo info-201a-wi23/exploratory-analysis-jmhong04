@@ -67,7 +67,7 @@ Our topic is on 2022’s billionaires around the world and their characteristics
 
 > Where did you find the data? Please include a link to the data source
 
-- The dataset in a csv format was obtained from Kaggle at the following website: https://www.kaggle.com/datasets/prasertk/forbes-worlds-billionaires-list-2022?resource=download . The original source of the data is Forbes:  https://www.forbes.com/billionaires/
+- The dataset in a csv format was obtained from Kaggle at the following website: https://www.kaggle.com/datasets/prasertk/forbes-worlds-billionaires-list-2022?resource=download. The original source of the data is Forbes:  https://www.forbes.com/billionaires/
 
 > Who collected the data?  
 
@@ -115,7 +115,7 @@ The Forbes Top World Billionaires List of 2022 includes 2668 billionaires from a
 ### Table
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
-knitr::kable(aggregate_table, col.names = c("Industry", "Average Net Worth (in Billions)", "Average Age", "Proportion of Women", "Proportion of Men"), caption = "Billionaire Data by Industry")
+knitr::kable(aggregate_table, col.names = c("Industry", "Average Net Worth (in Billions)", "Average Age", "Proportion of Women", "Proportion of Self-Made"), caption = "Billionaire Data by Industry")
 ```
 
 This table groups 2022’s billionaires by the industry they work in. Furthermore, it shows the average net worth and age of the billionaires as well as the proportion of women and proportion of self-made billionaires **per industry**. The average net worth is then displayed from greatest to least in order to show, on average, which industries contain the billionaires with the highest net worth. We chose to group our aggregate table by industry because we wanted to determine if a certain industry was associated with a higher net worth or if a billionaire’s net worth was the same regardless of the industry. We also wanted to understand how some of the factors we addressed in our research questions (such as age, gender, and privilege) played out in the industries with the most successful billionaires instead of only viewing how these factors play out among all billionaires. 
