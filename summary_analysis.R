@@ -51,8 +51,8 @@ avg_philantrophy <- billionaire_data %>%
 #Summary Statistics
 summary_info <- list()
 summary_info$averageAge <- average_age
-summary_info$proportion_of_women <- percentage_of_women
-summary_info$proportion_of_men <- percentage_of_men
+summary_info$proportion_of_women <- perc_of_women
+summary_info$proportion_of_men <- perc_of_men
 summary_info$proportion_inherited <- proportion_inherited
 summary_info$proportion_selfmade <- proportion_selfMade
 summary_info$most_country <- highest_num_billionaires_country
